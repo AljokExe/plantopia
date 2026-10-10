@@ -42,14 +42,27 @@ sheets and forums as weak support only. Put the source link next to each value
 in the proposal. Mark a value "unverified" when no source supports it, and say
 when sources disagree.
 
-**Option values.** Use the existing options above. When a needed value does not
-exist (for example a minimum of `18℃`), tell the user. Add it only after the
-user agrees. A new option in a create call adds the option to the database.
+**Option values.** Use the existing options. Fetch the data source first, because
+options change (for example `18℃` was added for the Ficus Ginseng). When a
+needed value does not exist, tell the user, and add it only after the user
+agrees. A create call with an unknown option fails: add the option first with
+`notion-update-data-source`, `ALTER COLUMN "<property>" SET MULTI_SELECT(...)`,
+and list every existing option with its colour, or Notion deletes the missing
+ones. Then update the options list in README.md.
 
 For a `Wishlist` plant, ask only for Name, a cover URL and an optional note.
 The template wishlist plants have no care data and no journal.
 
-## 2. Create the page
+## 2. Create the plant folder
+
+Copy `plants/_template/` to `plants/<plant-slug>/` (lowercase, hyphens, for
+example `ficus-ginseng`). Fill `plant.md` with the approved values and their
+sources. Move the user's photos into `photos/` and rename them
+`YYYY-MM-DD_<plant-slug>[_<label>].<ext>`. Ask for the date when the file name
+or EXIF data does not give it. Read each photo, and note in the journal only
+what is visible. Write `journal.md` entries newest first.
+
+## 3. Create the page
 
 Call `notion-create-pages` with parent `{"data_source_id": "8c6de382-8426-83a7-a439-879214aa5bf8"}`,
 `template_id: "ddfde382842683d79d260120df324e63"`, the properties, and the
@@ -64,7 +77,7 @@ The template applies asynchronously. Fetch the new page until its content shows
 the button block (`<unknown ... alt="button"/>`). Retry a few times before you
 add content. Content added too early ends up above or without the button.
 
-## 3. Add the body
+## 4. Add the body
 
 Read `notion://docs/enhanced-markdown-spec` once (with `notion-fetch`) before
 you write content. Then use `notion-update-page`:
@@ -86,7 +99,7 @@ you write content. Then use `notion-update-page`:
    ```
    Later entries go directly below the button and above older entries.
 
-## 4. Photos
+## 5. Photos
 
 - **Journal photos** (local files): call `notion-create-file-upload` with the
   file name. Then POST the file once with curl:
@@ -97,7 +110,7 @@ you write content. Then use `notion-update-page`:
   the cover in Notion (Change cover → Upload). The gallery views show the
   cover, so a plant without a cover looks empty there.
 
-## 5. Green Thumb Guide (optional)
+## 6. Green Thumb Guide (optional)
 
 Check the genus against the `Tags` options of the Green Thumb Guide
 (`collection://dcade382-8426-8280-a8da-076c15371053`): Anthurium, Alocasia,
@@ -106,7 +119,8 @@ care-guide article (Name = article title, `userDefined:URL`, `Tags` = the genus
 plus the relevant stage or problem tags). Add the new genus tag only after the
 user agrees.
 
-## 6. Report
+## 7. Report
 
-Give the page link and a short list of what you set. Name every field that
+Add the Notion link to `plant.md` and to the plant table in README.md.
+Commit the plant folder. Give the page link and a short list of what you set. Name every field that
 you left empty and every value that you proposed.
