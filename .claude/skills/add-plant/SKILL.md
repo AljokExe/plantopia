@@ -6,9 +6,9 @@ argument-hint: "[plant name and any details: care needs, date you got it, photo 
 
 # Add a plant to the Plant Care Tracker
 
-Create one page in the **Plants** database that looks like the template plants
-(for example "Alocasia Polly" and "Begonia 'Sierra Mountain King'"). Do not
-change or delete the template plants. They stay as examples.
+Create one page in the **Plants** database that follows the pattern of
+"Ficus Ginseng" (`plants/ficus-ginseng/` and its Notion page): botanical
+callout, the "Watered" button, and a growth journal of dated toggles.
 
 - Data source: `collection://8c6de382-8426-83a7-a439-879214aa5bf8`
 - Page template (adds the "Watered" button to the page body): `ddfde382842683d79d260120df324e63`
@@ -51,7 +51,7 @@ and list every existing option with its colour, or Notion deletes the missing
 ones. Then update the options list in README.md.
 
 For a `Wishlist` plant, ask only for Name, a cover URL and an optional note.
-The template wishlist plants have no care data and no journal.
+A wishlist plant has no care data and no journal.
 
 ## 2. Create the plant folder
 
@@ -113,8 +113,8 @@ you write content. Then use `notion-update-page`:
 ## 6. Green Thumb Guide (optional)
 
 Check the genus against the `Tags` options of the Green Thumb Guide
-(`collection://dcade382-8426-8280-a8da-076c15371053`): Anthurium, Alocasia,
-Begonia, Rex Begonia, Cane type Begonia. If the genus is new, offer to add one
+(`collection://dcade382-8426-8280-a8da-076c15371053`). Fetch the data source
+for the current options. If the genus has no article, offer to add one
 care-guide article (Name = article title, `userDefined:URL`, `Tags` = the genus
 plus the relevant stage or problem tags). Add the new genus tag only after the
 user agrees.
