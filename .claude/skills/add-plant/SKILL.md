@@ -105,9 +105,14 @@ you write content. Then use `notion-update-page`:
   file name. Then POST the file once with curl:
   `curl -sS -X POST "<upload_url>" <-H for each upload_headers entry> -F "file=@<path>"`.
   Use the returned `markdown_source` in the toggle. Limit: 20 MiB per file.
-- **Cover photo**: the API sets a cover only from a public URL. If the user has
-  only a local photo, upload it to the journal, then tell the user to set it as
-  the cover in Notion (Change cover → Upload). The gallery views show the
+- **Cover photo**: the API sets a cover only from a public URL. For a local
+  photo, use Claude in Chrome on the plant page: click "Add cover", hover the
+  cover, click "Change", open the "Upload" tab. Notion creates its file input
+  only on a click, and a real click opens a native dialog. So first patch
+  `HTMLInputElement.prototype.click` (javascript_tool) to append a `type=file`
+  input to the DOM instead of opening the dialog, then click "Upload file" in
+  JS, find the input, and attach the photo with `file_upload`. Restore the
+  original `click` afterwards. Use the newest photo. The gallery views show the
   cover, so a plant without a cover looks empty there.
 
 ## 6. Green Thumb Guide (optional)
