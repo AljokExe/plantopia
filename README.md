@@ -2,6 +2,16 @@
 
 This repository manages my Notion [Plant Care Tracker](https://app.notion.com/p/Plant-Care-Tracker-0c4de382842683f5855001cc01f5263a).
 
+## Add a plant
+
+Run `/add-plant` in Claude Code from this repo, with any details you have:
+
+```
+/add-plant Monstera deliciosa, got it today, bright indirect light, photo ~/Pictures/monstera.jpg
+```
+
+The skill asks for the missing fields, proposes care values, and creates the page in the Plants database.
+
 ## Notion structure
 
 | Database | Purpose | Data source |
