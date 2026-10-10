@@ -32,9 +32,15 @@ Do not ask for a field that the arguments already give. Only **Name** is require
 | Cover photo | page cover | A public image URL (see section 4) |
 | First journal entry | toggle in page body | Date the user got the plant, short notes, local photo paths |
 
-If the user does not know the care needs, propose values from your plant
-knowledge, and say that they are proposals. Show the full proposal and get a
-"yes" before you create the page.
+If the user does not know the care needs, propose values, and say that they
+are proposals. Show the full proposal and get a "yes" before you create the page.
+
+**Evidence rule.** Back every proposed value, care tip and botanical note with
+a source that you opened (WebSearch, then WebFetch on the page). Prefer
+university extension services, the RHS and botanical gardens. Treat shop care
+sheets and forums as weak support only. Put the source link next to each value
+in the proposal. Mark a value "unverified" when no source supports it, and say
+when sources disagree.
 
 **Option values.** Use the existing options above. When a needed value does not
 exist (for example a minimum of `18℃`), tell the user. Add it only after the
