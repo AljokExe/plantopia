@@ -28,6 +28,7 @@ Photo names start with the ISO date, so they sort by date. Add a short label whe
 | Plant | Notion |
 | --- | --- |
 | [Ficus Ginseng](plants/ficus-ginseng/plant.md) | [page](https://app.notion.com/p/3f5de38284268168bcb2f3883ea394cb) |
+| [Nepenthes](plants/nepenthes/plant.md) | [page](https://app.notion.com/p/3f5de382842681ea8770feedb886a3ea) |
 
 ## Notion structure
 
@@ -43,7 +44,7 @@ Photo names start with the ISO date, so they sort by date. Add a short label whe
 - **Ownership** (status): Wishlist, Currently Owned, Previously Owned
 - **Humidity Requirement** (multi-select): Humidity tolerant, 50%, 80%, Ventilation
 - **Lighting Requirement** (multi-select): Full Sun, Partial Shade, 5000k, 8000k
-- **Temperature Requirement** (multi-select): 5℃, 10℃, 15℃, 18℃, 30℃, 35℃
+- **Temperature Requirement** (multi-select): 5℃, 10℃, 15℃, 18℃, 23℃, 30℃, 35℃
 - **Soil Type** (multi-select): Excellent Drainage, Slightly Acid, Allow soil to dry between waterings
 - **Special Care Instructions** (text)
 - **Watered Date** (date) and **Waterd** (button that sets the date)
