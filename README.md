@@ -29,6 +29,7 @@ Photo names start with the ISO date, so they sort by date. Add a short label whe
 | --- | --- |
 | [Ficus Ginseng](plants/ficus-ginseng/plant.md) | [page](https://app.notion.com/p/3f5de38284268168bcb2f3883ea394cb) |
 | [Red Osier Dogwood](plants/red-osier-dogwood/plant.md) | [page](https://app.notion.com/p/3f7de382842681d081abc3e1b1fd2bdc) |
+| [Variegated Weeping Fig](plants/variegated-weeping-fig/plant.md) | [page](https://app.notion.com/p/3f7de3828426813889e3ed49264aeda3) |
 
 ## Notion structure
 
