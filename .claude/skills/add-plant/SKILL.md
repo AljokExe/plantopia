@@ -23,7 +23,7 @@ Do not ask for a field that the arguments already give. Only **Name** is require
 | Name | `Name` (title) | Common or cultivar name, for example `Monstera deliciosa` or `Begonia 'Autumn Ember'`. Plain text, no Markdown. |
 | Ownership | `Ownership` (status) | `Currently Owned` (default), `Wishlist`, `Previously Owned` |
 | Light | `Lighting Requirement` (multi) | `Full Sun`, `Partial Shade`, `5000k`, `8000k` (the last two are grow-light colour temperatures) |
-| Temperature range | `Temperature Requirement` (multi) | Two values: the minimum and the maximum, for example `10℃` + `30℃`. Options: `5℃`, `10℃`, `15℃`, `30℃`, `35℃` |
+| Temperature range | `Temperature Requirement` (multi) | Two values: the minimum and the maximum, for example `10℃` + `30℃`. Options: `-20℃`, `5℃`, `10℃`, `15℃`, `18℃`, `23℃`, `30℃`, `35℃` |
 | Humidity | `Humidity Requirement` (multi) | `Humidity tolerant`, `50%`, `80%`, `Ventilation` |
 | Soil | `Soil Type` (multi) | `Excellent Drainage`, `Slightly Acid`, `Allow soil to dry between waterings` |
 | Care tip | `Special Care Instructions` (text) | One or two sentences, the single most useful tip for this plant |
