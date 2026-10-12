@@ -27,7 +27,7 @@ Do not ask for a field that the arguments already give. Only **Name** is require
 | Soil | `Soil Type` (multi) | `Excellent Drainage`, `Slightly Acid`, `Allow soil to dry between waterings` |
 | Care tip | `Special Care Instructions` (text) | One or two sentences, the single most useful tip for this plant |
 | Botanical note | callout in page body | Scientific name or parentage, for example `Begonia 'Sierra Mountain King' = Begonia maculata x Begonia lubbersii` |
-| Cover photo | page cover | A public image URL (see section 4) |
+| Thumbnail | `Photo` (files) | The newest photo. The gallery cards show it (see section 5) |
 | First journal entry | toggle in page body | Date the user got the plant, short notes, local photo paths |
 
 If the user does not know the care needs, propose values, and say that they
@@ -63,8 +63,9 @@ what is visible. Write `journal.md` entries newest first.
 ## 3. Create the page
 
 Call `notion-create-pages` with parent `{"data_source_id": "8c6de382-8426-83a7-a439-879214aa5bf8"}`,
-the properties, and the `cover` URL if you have one. Do not pass `template_id`:
-the database's default template is blank.
+the properties, and the body `content` (section 4). Do not pass `template_id`:
+the database's default template is blank. Set `Photo` afterwards (section 5):
+a file upload is only accepted by `notion-update-page`, not on create.
 
 Property formats:
 - Multi-select: a JSON array string, for example `"[\"10℃\",\"30℃\"]"`.
@@ -97,15 +98,15 @@ you write content. Then use `notion-update-page`:
   file name. Then POST the file once with curl:
   `curl -sS -X POST "<upload_url>" <-H for each upload_headers entry> -F "file=@<path>"`.
   Use the returned `markdown_source` in the toggle. Limit: 20 MiB per file.
-- **Cover photo**: the API sets a cover only from a public URL. For a local
-  photo, use Claude in Chrome on the plant page: click "Add cover", hover the
-  cover, click "Change", open the "Upload" tab. Notion creates its file input
-  only on a click, and a real click opens a native dialog. So first patch
-  `HTMLInputElement.prototype.click` (javascript_tool) to append a `type=file`
-  input to the DOM instead of opening the dialog, then click "Upload file" in
-  JS, find the input, and attach the photo with `file_upload`. Restore the
-  original `click` afterwards. Use the newest photo. The gallery views show the
-  cover, so a plant without a cover looks empty there.
+- **Thumbnail** (the gallery card image): the gallery views use the `Photo`
+  files property as the card cover, not the page cover. Upload the newest photo
+  once more (a file upload can be attached only once, so the journal image needs
+  its own upload), then call `notion-update-page` with `update_properties`:
+  `{"Photo": [{"type": "file_upload", "file_upload": {"id": "<file_upload_id>"}}]}`.
+  The API rejects a page cover from a file upload, so do not use `cover`.
+  A plant without a `Photo` looks empty in the gallery.
+- **Shell note**: in zsh, do not name a loop variable `path`: it overwrites
+  `PATH`, and every later command fails with "command not found".
 
 ## 6. Green Thumb Guide (optional)
 

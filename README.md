@@ -30,6 +30,17 @@ Photo names start with the ISO date, so they sort by date. Add a short label whe
 | [Ficus Ginseng](plants/ficus-ginseng/plant.md) | [page](https://app.notion.com/p/3f5de38284268168bcb2f3883ea394cb) |
 | [Red Osier Dogwood](plants/red-osier-dogwood/plant.md) | [page](https://app.notion.com/p/3f7de382842681d081abc3e1b1fd2bdc) |
 | [Variegated Weeping Fig](plants/variegated-weeping-fig/plant.md) | [page](https://app.notion.com/p/3f7de3828426813889e3ed49264aeda3) |
+| [White Bird of Paradise](plants/white-bird-of-paradise/plant.md) | [page](https://app.notion.com/p/3f7de382842681abbd28ff32fe8a5523) |
+| [African Milk Tree](plants/african-milk-tree/plant.md) | [page](https://app.notion.com/p/3f7de3828426810c931dfe895a5ce92d) |
+| [Variegated Umbrella Plant](plants/variegated-umbrella-plant/plant.md) | [page](https://app.notion.com/p/3f7de382842681a4a357d4f004148981) |
+| [Felted Peperomia](plants/felted-peperomia/plant.md) | [page](https://app.notion.com/p/3f7de382842681c19d97efc4795c418b) |
+| [Clusia 'Princess'](plants/clusia-princess/plant.md) | [page](https://app.notion.com/p/3f7de38284268107b9e9d502dde63bbb) |
+| [Crocodile Fern](plants/crocodile-fern/plant.md) | [page](https://app.notion.com/p/3f7de3828426817f8c47dff7bd8f2ba9) |
+| [Chinese Money Plant](plants/chinese-money-plant/plant.md) | [page](https://app.notion.com/p/3f7de38284268114ad4ed5322c1c1264) |
+| [Mother of Thousands](plants/mother-of-thousands/plant.md) | [page](https://app.notion.com/p/3f7de3828426812bb7caf66fc9dd289f) |
+| [Pilea 'Mojito'](plants/pilea-mojito/plant.md) | [page](https://app.notion.com/p/3f7de382842681829754f26aca95ee0d) |
+| [Peperomia 'Pepperspot'](plants/peperomia-pepperspot/plant.md) | [page](https://app.notion.com/p/3f7de382842681f98ebff32fe27f2156) |
+| [Satin Pothos](plants/satin-pothos/plant.md) | [page](https://app.notion.com/p/3f7de38284268183b8b9e4cb5d189db5) |
 
 ## Notion structure
 
@@ -48,6 +59,7 @@ Photo names start with the ISO date, so they sort by date. Add a short label whe
 - **Temperature Requirement** (multi-select): -20℃, 5℃, 10℃, 15℃, 18℃, 23℃, 30℃, 35℃
 - **Soil Type** (multi-select): Excellent Drainage, Slightly Acid, Allow soil to dry between waterings
 - **Special Care Instructions** (text)
+- **Photo** (files): the newest photo. The gallery views use it as the card thumbnail.
 
 ### Green Thumb Guide properties
 
