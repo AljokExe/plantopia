@@ -35,7 +35,7 @@ Photo names start with the ISO date, so they sort by date. Add a short label whe
 
 | Database | Purpose | Data source |
 | --- | --- | --- |
-| Plants | One page per plant: care needs, ownership, last watering | `collection://8c6de382-8426-83a7-a439-879214aa5bf8` |
+| Plants | One page per plant: care needs, ownership | `collection://8c6de382-8426-83a7-a439-879214aa5bf8` |
 | Green Thumb Guide | Care articles, tagged by growth stage, problem and genus | `collection://dcade382-8426-8280-a8da-076c15371053` |
 | Supplies | Owned supplies and the shopping list | `collection://f1ade382-8426-836a-af85-87bf2fb4ba2e` |
 
@@ -48,7 +48,6 @@ Photo names start with the ISO date, so they sort by date. Add a short label whe
 - **Temperature Requirement** (multi-select): -20℃, 5℃, 10℃, 15℃, 18℃, 23℃, 30℃, 35℃
 - **Soil Type** (multi-select): Excellent Drainage, Slightly Acid, Allow soil to dry between waterings
 - **Special Care Instructions** (text)
-- **Watered Date** (date) and **Waterd** (button that sets the date)
 
 ### Green Thumb Guide properties
 

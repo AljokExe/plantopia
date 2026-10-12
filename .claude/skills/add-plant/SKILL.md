@@ -8,10 +8,9 @@ argument-hint: "[plant name and any details: care needs, date you got it, photo 
 
 Create one page in the **Plants** database that follows the pattern of
 "Ficus Ginseng" (`plants/ficus-ginseng/` and its Notion page): botanical
-callout, the "Watered" button, and a growth journal of dated toggles.
+callout and a growth journal of dated toggles.
 
 - Data source: `collection://8c6de382-8426-83a7-a439-879214aa5bf8`
-- Page template (adds the "Watered" button to the page body): `ddfde382842683d79d260120df324e63`
 
 ## 1. Collect the data
 
@@ -27,7 +26,6 @@ Do not ask for a field that the arguments already give. Only **Name** is require
 | Humidity | `Humidity Requirement` (multi) | `Humidity tolerant`, `50%`, `80%`, `Ventilation` |
 | Soil | `Soil Type` (multi) | `Excellent Drainage`, `Slightly Acid`, `Allow soil to dry between waterings` |
 | Care tip | `Special Care Instructions` (text) | One or two sentences, the single most useful tip for this plant |
-| Last watered | `Watered Date` (date) | ISO date. Omit if unknown |
 | Botanical note | callout in page body | Scientific name or parentage, for example `Begonia 'Sierra Mountain King' = Begonia maculata x Begonia lubbersii` |
 | Cover photo | page cover | A public image URL (see section 4) |
 | First journal entry | toggle in page body | Date the user got the plant, short notes, local photo paths |
@@ -65,17 +63,11 @@ what is visible. Write `journal.md` entries newest first.
 ## 3. Create the page
 
 Call `notion-create-pages` with parent `{"data_source_id": "8c6de382-8426-83a7-a439-879214aa5bf8"}`,
-`template_id: "ddfde382842683d79d260120df324e63"`, the properties, and the
-`cover` URL if you have one. Do not pass `content`: the template supplies the body.
+the properties, and the `cover` URL if you have one. Do not pass `template_id`:
+the database's default template is blank.
 
 Property formats:
 - Multi-select: a JSON array string, for example `"[\"10℃\",\"30℃\"]"`.
-- Date: `"date:Watered Date:start": "2026-10-10"` and `"date:Watered Date:is_datetime": 0`.
-- Do not set `Waterd`. It is a button, and the API cannot set it.
-
-The template applies asynchronously. Fetch the new page until its content shows
-the button block (`<unknown ... alt="button"/>`). Retry a few times before you
-add content. Content added too early ends up above or without the button.
 
 ## 4. Add the body
 
@@ -97,7 +89,7 @@ you write content. Then use `notion-update-page`:
    	![](<markdown_source of each photo>)
    ---
    ```
-   Later entries go directly below the button and above older entries.
+   Later entries go directly below the botanical note and above older entries.
 
 ## 5. Photos
 
