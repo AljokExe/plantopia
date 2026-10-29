@@ -6,12 +6,15 @@ argument-hint: "[plant name and any details: care needs, date you got it, photo 
 
 # Add a plant to the Plant Care Tracker
 
-Create one page in the **Plants** database that follows the pattern of
-"Ficus Ginseng" (`plants/ficus-ginseng/` and its Notion page): botanical
-callout, the "Watered" button, and a growth journal of dated toggles.
+Create one page in the **Plants** database with a botanical callout, the
+"Watered" button, and a growth journal of dated toggles. For an example, see
+`plants/ficus-ginseng/` in the original repository.
 
-- Data source: `collection://8c6de382-8426-83a7-a439-879214aa5bf8`
-- Page template (adds the "Watered" button to the page body): `ddfde382842683d79d260120df324e63`
+Read the IDs from `plantopia.json`. If the file is missing, tell the user to
+run `/setup-tracker` first.
+
+- Data source: `dataSources.plants`
+- Page template (adds the "Watered" button to the page body): `plantPageTemplate`
 
 ## 1. Collect the data
 
@@ -23,7 +26,7 @@ Do not ask for a field that the arguments already give. Only **Name** is require
 | Name | `Name` (title) | Common or cultivar name, for example `Monstera deliciosa` or `Begonia 'Autumn Ember'`. Plain text, no Markdown. |
 | Ownership | `Ownership` (status) | `Currently Owned` (default), `Wishlist`, `Previously Owned` |
 | Light | `Lighting Requirement` (multi) | `Full Sun`, `Partial Shade`, `5000k`, `8000k` (the last two are grow-light colour temperatures) |
-| Temperature range | `Temperature Requirement` (multi) | Two values: the minimum and the maximum, for example `10℃` + `30℃`. Options: `5℃`, `10℃`, `15℃`, `30℃`, `35℃` |
+| Temperature range | `Temperature Requirement` (multi) | Two values: the minimum and the maximum, for example `10℃` + `30℃`. Options: `5℃`, `10℃`, `15℃`, `18℃`, `23℃`, `30℃`, `35℃` |
 | Humidity | `Humidity Requirement` (multi) | `Humidity tolerant`, `50%`, `80%`, `Ventilation` |
 | Soil | `Soil Type` (multi) | `Excellent Drainage`, `Slightly Acid`, `Allow soil to dry between waterings` |
 | Care tip | `Special Care Instructions` (text) | One or two sentences, the single most useful tip for this plant |
@@ -64,8 +67,8 @@ what is visible. Write `journal.md` entries newest first.
 
 ## 3. Create the page
 
-Call `notion-create-pages` with parent `{"data_source_id": "8c6de382-8426-83a7-a439-879214aa5bf8"}`,
-`template_id: "ddfde382842683d79d260120df324e63"`, the properties, and the
+Call `notion-create-pages` with parent `{"data_source_id": "<dataSources.plants without collection://>"}`,
+`template_id: "<plantPageTemplate>"`, the properties, and the
 `cover` URL if you have one. Do not pass `content`: the template supplies the body.
 
 Property formats:
@@ -118,7 +121,7 @@ you write content. Then use `notion-update-page`:
 ## 6. Green Thumb Guide (optional)
 
 Check the genus against the `Tags` options of the Green Thumb Guide
-(`collection://dcade382-8426-8280-a8da-076c15371053`). Fetch the data source
+(`dataSources.greenThumbGuide`). Fetch the data source
 for the current options. If the genus has no article, offer to add one
 care-guide article (Name = article title, `userDefined:URL`, `Tags` = the genus
 plus the relevant stage or problem tags). Add the new genus tag only after the

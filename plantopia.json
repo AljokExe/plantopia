@@ -1,0 +1,9 @@
+{
+  "notionPage": "https://app.notion.com/p/Plant-Care-Tracker-0c4de382842683f5855001cc01f5263a",
+  "dataSources": {
+    "plants": "collection://8c6de382-8426-83a7-a439-879214aa5bf8",
+    "greenThumbGuide": "collection://dcade382-8426-8280-a8da-076c15371053",
+    "supplies": "collection://f1ade382-8426-836a-af85-87bf2fb4ba2e"
+  },
+  "plantPageTemplate": "ddfde382842683d79d260120df324e63"
+}
